@@ -20,7 +20,21 @@ The workflow publishes only `index.html` and `.nojekyll`. Documentation and repo
 
 These steps follow [GitHub's publishing-source documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site). To use metalbuildings.pro as the live address, configure the custom domain and DNS separately using [GitHub's custom-domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
 
-The page is prepared locally; it has not been published and no DNS settings have been changed.
+GitHub Pages is configured to publish this repository through GitHub Actions with `metalbuildings.pro` as the custom domain. The initial deployment completed on October 2, 2026.
+
+## Domain configuration
+
+DNS is hosted on Porkbun's existing authoritative nameservers. The zone was empty when configured. Its new records are:
+
+| Type | Host | Value | TTL |
+| --- | --- | --- | --- |
+| A | @ | 185.199.108.153 | 600 |
+| A | @ | 185.199.109.153 | 600 |
+| A | @ | 185.199.110.153 | 600 |
+| A | @ | 185.199.111.153 | 600 |
+| CNAME | www | tdodgeco.github.io | 600 |
+
+There are no email or previous provider records in this configuration. GitHub manages the HTTPS certificate. Its issuance and HTTPS enforcement status can be checked in **Settings → Pages**.
 
 ## Edit
 
